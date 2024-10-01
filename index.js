@@ -17,5 +17,13 @@ app.get('/', function (req, res) {
   });
 });
 
+app.post('/create', function (req, res) {
+  
+  fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`,req.body.details,function(err){
+res.redirect("/")
+  })
+      // console.error(req.body);
+});
+
 
 app.listen(3000)
