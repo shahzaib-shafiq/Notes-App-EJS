@@ -38,10 +38,13 @@ res.redirect("/")
 
 
 app.post('/edit', function (req, res) {
-  
+
  fs.rename(`./files/${req.body.previous}`,`./files/${req.body.new}`,function(err){
   res.redirect("/")
  })
+ console.error(req.body.new);
+ console.error(req.body.previous);
+ 
        console.error(req.body);
 });
 
